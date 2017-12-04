@@ -1,18 +1,26 @@
 import React, {Component} from 'react'
 import {
   StyleSheet,
+  StatusBar,
   View,
   Text
 } from 'react-native'
 import {StackNavigator} from 'react-navigation'
 import SignInScreen from './components/SignIn'
 import TabScreen from './components/TabBar'
+import DetailScreen from './components/Detail'
 
 const StackRouter = StackNavigator({
-  TabBar:{
+  Detail: {
+    screen: DetailScreen,
+    navigationOptions: {
+      headerTitle: '详情'
+    }
+  },
+  TabBar: {
     screen: TabScreen,
     navigationOptions: {
-      header: null
+      // header: null
     }
   },
   SignIn: {
@@ -35,7 +43,14 @@ export default class App extends Component {
       //   <Text>oddk</Text>
 
       // </View>
+      // <View>
+      //   <StatusBar
+      //     backgroundColor="blue"
+      //     barStyle="light-content"
+      //   />
+      // </View>
       <StackRouter />
+
     )
   }
 }

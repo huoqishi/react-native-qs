@@ -15,7 +15,7 @@ export default class Btn extends Component {
     return (
       <TouchableOpacity
         onPress={this.props.onPress}
-        style={[styles.container, this.props.btnStyle]}>
+        style={[styles.container, this.props.btnStyle, this.props.style]}>
         <Text style={[styles.text, this.props.textStyle]}>{title}</Text>
       </TouchableOpacity>
     )

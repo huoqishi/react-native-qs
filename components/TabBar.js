@@ -8,17 +8,31 @@ import {TabNavigator} from 'react-navigation'
 import Icon from 'react-native-vector-icons/FontAwesome'
 
 import HomeScreen from './Home.js'
-// import SearchScreen from './Search.js'
+import SearchScreen from './Search.js'
 // import FindScreen from './Find.js'
 import MineScreen from './Mine.js'
 // const HomeScreen = () => (<View style={styles.container}><Text>我是Home组件</Text></View>)
-const SearchScreen = () => (<View style={styles.container}><Text>我是Search组件</Text></View>)
+// const SearchScreen = () => (<View style={styles.container}><Text>我是Search组件</Text></View>)
 const FindScreen = () => (<View style={styles.container}><Text>我是Find组件</Text></View>)
 // const MineScreen = () => (<View style={styles.container}><Text>我是Mine组件</Text></View>)
 const optionsA = {
+  Search: {
+    screen: SearchScreen,
+    navigationOptions: {
+      header: null,
+      // headerTitle: 'dd',
+      tabBarLabel: '搜索',
+      tabBarIcon: ({focused, tintColor}) => (
+        <Icon
+          style={{width: 25, height: 25, color: tintColor}}
+          name='search' size={25} color='#ccc' />
+      )
+    }
+  },
   Mine: {
     screen: MineScreen,
     navigationOptions: {
+      headerTitle: '个人中心',
       tabBarLabel: '我的',
       tabBarIcon: ({focused, tintColor}) => (
         <Icon
@@ -30,22 +44,12 @@ const optionsA = {
   Home: {
     screen: HomeScreen,
     navigationOptions: {
+      header: null,
       tabBarLabel: '首页',
       tabBarIcon: ({focused, tintColor}) => (
         <Icon
           style={{width: 25, height: 25, color: tintColor}}
           name='home' size={25} color='#ccc' />
-      )
-    }
-  },
-  Search: {
-    screen: SearchScreen,
-    navigationOptions: {
-      tabBarLabel: '搜索',
-      tabBarIcon: ({focused, tintColor}) => (
-        <Icon
-          style={{width: 25, height: 25, color: tintColor}}
-          name='search' size={25} color='#ccc' />
       )
     }
   },

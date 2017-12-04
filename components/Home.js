@@ -15,6 +15,10 @@ export default class Home extends Component {
     this.state = {
       data: [
         {
+          key: 'dfd',
+          id: 'xx'
+        },
+        {
           key: 'dd',
           id: 1,
           src: '../assets/images/timg-pai.jpeg'},
@@ -33,23 +37,24 @@ export default class Home extends Component {
       <View style={[styles.container]}>
         {/* <Image style={styles.img} source={{uri: 'http://m.paixin.com/static/img/rectangle-19@2x.f2d3663.jpg'}} /> */}
         <FlatList
-          data={[{id: 1}, {id: 3}, {id: 4}, {id: 5}, {id: 6}]}
+          // data={[{id: 1}, {id: 3}, {id: 4}, {id: 5}, {id: 6}]}
+          data={this.state.data}
           renderItem={({index, item}) => {
             // console.log(row, item)
-            // if (index === 0) {
-            //   return <Carousel
-            //   // interval={1000}
-            //     data={this.state.data}
-            //     renderItem={this._renderItem}
-            //   />
-            // }
+            if (index === 0) {
+              return <Carousel
+              // interval={1000}
+                data={this.state.data}
+                renderItem={this._renderItem}
+              />
+            }
             return (
               <View
               //  keyExtractor={(item, index) => item.id} style={styles.qsList}
               >
                 <View style={styles.qsItem}>
                   <View style={styles.qsUser}><Image style={styles.qsAvatar} source={require('../assets/images/avatar.png')} />
-                    <Text style={styles.qsUserName}>火骑士空空</Text></View>
+                    <Text style={styles.qsUserName}>火骑士空空{item.id}</Text></View>
                   {/* <Image style={styles.qsImg} source={require('../assets/images/timg-pai.jpeg')} /> */}
                   <Image style={styles.qsImg} source={require('../assets/images/test2.jpg')} />
                   <Text style={styles.qsSummary} >我不会被打的, 对吧？[图片]</Text>

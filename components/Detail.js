@@ -12,13 +12,15 @@ import {
   Image
 } from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome'
-import Btn from './Btn.js'
+import Btn from './Btn'
+import EditComment from './EditComment'
 
 export default class Search extends Component {
   render () {
     return (
       <View style={styles.container}>
         <StatusBar barStyle='dark-content'/>
+        <EditComment isShow={true} />
         <Btn style={styles.qEditBtn}><Icon style={styles.qEditIcon} name="edit"/></Btn>
         <View style={styles.qBox}>
           <Text style={styles.qTitle}>标题标题标题标题标题题标题标题题标题标题?</Text>
